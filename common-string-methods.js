@@ -69,23 +69,83 @@ Complete the following tasks and assign the results to the specified variables. 
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
 // 1. Searching
-let hasJavaScript; // Your code here
-let codingPosition; // Your code here
-let startsWithWelcome; // Your code here
-let endsWithToday; // Your code here
+let hasJavaScript; 
+hasJavaScript = inputString.includes("JavaScript");
+
+let codingPosition;
+codingPosition = inputString.indexOf("Coding");
+
+let startsWithWelcome;
+startsWithWelcome = inputString.startsWith("Welcome");
+
+let endsWithToday;
+endsWithToday = inputString.endsWith("today.");
 
 // 2. Transforming
-let lowercaseString; // Your code here
-let uppercaseString; // Your code here
-let trimmedString; // Your code here
-let replacedString; // Your code here
+let lowercaseString;
+lowercaseString = inputString.toLowerCase();
+
+
+let uppercaseString;
+uppercaseString = inputString.toUpperCase();
+
+let trimmedString;
+trimmedString = inputString.trim();
+
+let replacedString;
+replacedString = inputString.replace("JavaScript", "coding");
 
 // 3. Breaking Apart
-let wordsArray; // Your code here
+let wordsArray;
+wordsArray = inputString.split(" ");
 
 // 4. Retrieving
-let firstCharacter; // Your code here
-let extractedBootcamp; // Your code here
+let firstCharacter;
+firstCharacter = trimmedString.charAt(0);
+
+let extractedBootcamp;
+extractedBootcamp = inputString.slice(24, 32);
+
+//Check answers
+
+//contains the word JavaScript
+console.log("1.1: ", hasJavaScript === true); 
+
+// Coding starts at position 17
+console.log("1.2: ", codingPosition === 17); 
+
+//starts with 2 spaces
+console.log("1.3: ", startsWithWelcome === false); 
+
+///ends with 2 spaces
+console.log("1.4: ", endsWithToday === false); 
+
+//all characters should be lowercase
+console.log("2.1: ", lowercaseString === "  welcome to the coding bootcamp! learn javascript today.  ");
+
+//all characters should be uppercase
+console.log("2.2: ", uppercaseString === "  WELCOME TO THE CODING BOOTCAMP! LEARN JAVASCRIPT TODAY.  ");
+
+//remove extraneous spaces  
+console.log("2.3: ", trimmedString === "Welcome to the Coding Bootcamp! Learn JavaScript today.");
+
+//replace JavaScript with Coding
+console.log("2.4: ", replacedString === "  Welcome to the Coding Bootcamp! Learn coding today.  ");
+
+//split string into an array. I can't recall how to 
+let arrayCheck = ['', '', 'Welcome', 'to', 'the', 'Coding', 'Bootcamp!', 'Learn', 'JavaScript', 'today.', '', ''];
+let answer;
+for (var i = 0; i < wordsArray.length; i++) {
+  if (wordsArray[i] === arrayCheck[i]){
+    answer = true}
+};
+console.log("3.1: ", answer);
+
+//first character from trimmedString should be W
+console.log("4.1: ", firstCharacter === "W");
+
+//should extract only the word Bootcamp
+console.log("4.2: ", extractedBootcamp === "Bootcamp");
 
 // Log all results
 console.log({
@@ -101,3 +161,5 @@ console.log({
   firstCharacter,
   extractedBootcamp,
 });
+
+
